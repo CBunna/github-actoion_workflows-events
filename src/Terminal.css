@@ -1,0 +1,143 @@
+.terminal-container {
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  overflow: hidden;
+  background-color: #060913;
+  border-color: rgba(0, 242, 254, 0.1);
+}
+
+.terminal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: rgba(11, 15, 25, 0.8);
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.terminal-header-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+}
+
+.terminal-icon {
+  font-size: 0.95rem;
+}
+
+.status-badge {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 12px;
+  letter-spacing: 0.5px;
+}
+
+.status-badge.idle {
+  background-color: #334155;
+  color: #94a3b8;
+}
+
+.status-badge.active-run {
+  background-color: rgba(0, 242, 254, 0.15);
+  color: var(--accent-cyan);
+  box-shadow: var(--glow-cyan);
+}
+
+.status-badge.success {
+  background-color: rgba(0, 230, 118, 0.15);
+  color: var(--accent-green);
+  box-shadow: var(--glow-green);
+}
+
+.status-badge.error {
+  background-color: rgba(255, 61, 0, 0.15);
+  color: var(--accent-red);
+}
+
+.terminal-body {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.terminal-placeholder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-muted);
+  text-align: center;
+  gap: 8px;
+}
+
+.command-hint {
+  color: #c9d1d9;
+  font-size: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 4px 12px;
+  border-radius: 4px;
+  border: 1px dashed var(--border-glass);
+}
+
+.cursor {
+  font-weight: 700;
+  animation: terminalBlink 1s step-end infinite;
+  color: var(--accent-cyan);
+}
+
+.logs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.log-line {
+  color: #d1d5db;
+  white-space: pre-wrap;
+}
+
+.log-line.indent {
+  padding-left: 12px;
+  color: var(--text-secondary);
+}
+
+.log-line.highlight-green {
+  color: var(--accent-green);
+  font-weight: 500;
+}
+
+.log-line.highlight-red {
+  color: var(--accent-red);
+  font-weight: 500;
+}
+
+.log-line.highlight-blue {
+  color: #38bdf8;
+  font-weight: 500;
+}
+
+.loading-indicator {
+  color: var(--accent-cyan);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.spinner {
+  display: inline-block;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

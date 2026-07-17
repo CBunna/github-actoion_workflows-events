@@ -1,0 +1,82 @@
+.job-graph-container {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+}
+
+.graph-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border-glass);
+  padding-bottom: 8px;
+}
+
+.graph-header h3 {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.graph-subtitle {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.graph-svg-wrapper {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.graph-edge {
+  stroke: #334155;
+  stroke-width: 2;
+  transition: all 0.5s ease;
+}
+
+.graph-edge.active {
+  stroke: var(--accent-cyan);
+  stroke-dasharray: 5;
+  animation: dash 1s linear infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -10;
+  }
+}
+
+.graph-node-circle {
+  transition: all 0.3s ease;
+}
+
+.graph-node-circle.running {
+  animation: nodeGlowPulse 1.5s infinite alternate;
+}
+
+@keyframes nodeGlowPulse {
+  0% {
+    r: 18;
+    filter: drop-shadow(0 0 2px rgba(0, 242, 254, 0.4));
+  }
+  100% {
+    r: 20;
+    filter: drop-shadow(0 0 8px rgba(0, 242, 254, 0.8));
+  }
+}
+
+.graph-node-label {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.75rem;
+  fill: var(--text-secondary);
+  font-weight: 500;
+}
+
+.graph-node-icon {
+  font-family: 'Inter', sans-serif;
+  user-select: none;
+}

@@ -1,0 +1,117 @@
+.editor-container {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  overflow: hidden;
+  border-color: var(--border-glass);
+}
+
+.editor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background-color: rgba(11, 15, 25, 0.5);
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.editor-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dot.red { background-color: var(--accent-red); }
+.dot.yellow { background-color: #ffb300; }
+.dot.green { background-color: var(--accent-green); }
+
+.editor-title {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.reset-btn {
+  background: transparent;
+  border: 1px solid var(--border-glass);
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reset-btn:hover {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  border-color: var(--text-muted);
+}
+
+.editor-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--bg-secondary);
+}
+
+.line-numbers {
+  width: 45px;
+  padding: 16px 0;
+  text-align: right;
+  padding-right: 12px;
+  background-color: rgba(11, 15, 25, 0.3);
+  border-right: 1px solid var(--border-glass);
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  overflow-y: hidden;
+  user-select: none;
+}
+
+.line-number-cell {
+  height: 22px;
+  line-height: 22px;
+}
+
+.editor-textarea {
+  flex: 1;
+  padding: 16px;
+  background: transparent;
+  border: none;
+  resize: none;
+  outline: none;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+  line-height: 22px;
+  color: #c9d1d9;
+  overflow-y: auto;
+  white-space: pre;
+}
+
+.editor-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background-color: rgba(11, 15, 25, 0.5);
+  border-top: 1px solid var(--border-glass);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.footer-status {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.footer-lang {
+  font-weight: 600;
+  color: var(--text-secondary);
+}
