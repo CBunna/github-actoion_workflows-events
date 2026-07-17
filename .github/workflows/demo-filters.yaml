@@ -16,7 +16,9 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Output event data
-              run: echo "${{toJson(github.event)}}"
+              env:
+                  EVENT_CONTEXT: ${{ toJson(github.event) }}
+              run: echo "$EVENT_CONTEXT"
             - name: Checkout code
               uses: actions/checkout@v4
             - name: Install Dependencies
