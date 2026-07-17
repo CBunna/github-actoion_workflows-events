@@ -1,0 +1,26 @@
+name: Practical Events 1
+on:
+    pull_request: # Trigger when a pull request is opened
+        types: ["opened"] # Trigger only when a pull request is opened
+    workflow_dispatch: # Trigger when a workflow is dispatched
+    push:
+        branches:
+            - main #main
+            - "dev-*" #Matches all branches that start with dev- (e.g. dev-01, dev-22)
+            - "feat/**" #Matches all branches that start with feat- (e.g. feat-01, feat-22)
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Output event data
+              run: echo "${{toJson(github.event)}}"
+            - name: Checkout code
+              uses: actions/checkout@v4
+            - name: Install Dependencies
+              run: npm ci
+            - name: Run Tests
+              run: npm test
+            - name: Build Project
+              run: npm run build
+            - name: Deploy Project
+              run: echo "Deploying to production..."
