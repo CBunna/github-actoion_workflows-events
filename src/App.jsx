@@ -172,7 +172,7 @@ export default function App() {
       <header className="app-header glass-panel">
         <div className="header-branding">
           <span className="brand-logo">🎓</span>
-          <h1>GHA-Quest</h1>
+          <h1>GITHUB-Actions</h1>
           <span className="brand-tag">GitHub Actions Simulator</span>
         </div>
 
