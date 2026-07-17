@@ -8,6 +8,9 @@ on:
             - main #main
             - "dev-*" #Matches all branches that start with dev- (e.g. dev-01, dev-22)
             - "feat/**" #Matches all branches that start with feat- (e.g. feat-01, feat-22)
+        paths-ignore:
+            - ".github/workflows/*" #Ignore all changes in the workflows directory
+
 jobs:
     deploy:
         runs-on: ubuntu-latest
